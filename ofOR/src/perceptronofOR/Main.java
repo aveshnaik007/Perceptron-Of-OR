@@ -30,7 +30,7 @@ public class Main {
 		while(tot < 4){
 			tot = 0;
 			for(int i=0;i<4;i++){
-				tot = tot+or.operationOR(0);
+				tot = tot+or.operationOR(i);
 			}
 		}
 		or.displayW();

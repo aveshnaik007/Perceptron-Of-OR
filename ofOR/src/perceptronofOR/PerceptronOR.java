@@ -37,7 +37,7 @@ public class PerceptronOR {
 		for(int i=0;i<w.size();i++) {
 			sum = sum + (w.get(i) * totVect.get(i).get(nOfX));
 		}
-		
+		//displayW();
 		System.out.println(sum+" "+yList.get(nOfX));
 		
 		if(sum != yList.get(nOfX)) {
