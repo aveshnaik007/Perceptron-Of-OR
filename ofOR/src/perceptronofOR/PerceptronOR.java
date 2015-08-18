@@ -7,6 +7,7 @@ public class PerceptronOR {
 	LinkedList<LinkedList<Integer>> totVect = new LinkedList<LinkedList<Integer>>(); // List of List
 	LinkedList<Integer> yList = new LinkedList<Integer>();
 	LinkedList<Integer> w = new LinkedList<Integer>();
+	int sum;
 
 	public void createList(int totInputVect) {
 		// TODO Auto-generated method stub
@@ -33,12 +34,15 @@ public class PerceptronOR {
 
 	public int operationOR(int nOfX) {
 		// TODO Auto-generated method stub
-		int sum = 0;
+		sum = 0;
 		for(int i=0;i<w.size();i++) {
 			sum = sum + (w.get(i) * totVect.get(i).get(nOfX));
 		}
 		//displayW();
 		System.out.println(sum+" "+yList.get(nOfX));
+		
+		if(sum != 0) 
+			sum=1;
 		
 		if(sum != yList.get(nOfX)) {
 			if(yList.get(nOfX) == 0)
@@ -56,9 +60,9 @@ public class PerceptronOR {
 		// TODO Auto-generated method stub
 		for(int k=0;k<w.size();k++) {
 			if(operator.equals("+"))
-				w.set(k, w.get(k) - totVect.get(k).get(nOfX));
-			else 
 				w.set(k, w.get(k) + totVect.get(k).get(nOfX));
+			else 
+				w.set(k, w.get(k) - totVect.get(k).get(nOfX));
 		}
 	}
 	
